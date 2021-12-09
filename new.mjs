@@ -4,7 +4,7 @@ const directories = fs.readdirSync('.').filter((e) => !isNaN(e));
 let newDir = process.argv[3];
 if (!newDir) {
     const max = directories.reduce((prev, cur) => cur > prev ? cur : prev, 0);
-    newDir = "" + parseInt(max)+1;
+    newDir = "" + (parseInt(max)+1);
 }
 
 await $`mkdir -p ${newDir}/.vscode`;
@@ -18,7 +18,7 @@ const launchJson = {
             skipFiles: [
                 "<node_internals>/**"
             ],
-            program: "${workspaceFolder}/" + newDir + "/1.js"
+            program: "${workspaceFolder}/1.js"
         },
         {
             type: "pwa-node",
@@ -27,7 +27,7 @@ const launchJson = {
             skipFiles: [
                 "<node_internals>/**"
             ],
-            program: "${workspaceFolder}/" + newDir + "/2.js"
+            program: "${workspaceFolder}/2.js"
         }
     ]
 }
