@@ -3,7 +3,7 @@ const fs = require('fs');
 const directories = fs.readdirSync('.').filter((e) => !isNaN(e));
 let newDir = process.argv[3];
 if (!newDir) {
-    const max = directories.reduce((prev, cur) => cur > prev ? cur : prev, 0);
+    const max = directories.reduce((prev, cur) => parseInt(cur) > parseInt(prev) ? cur : prev, 0);
     newDir = "" + (parseInt(max)+1);
 }
 
