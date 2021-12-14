@@ -37,7 +37,6 @@ const getNewStr2 = (charA, charC, depth) => {
         // and what is between charB and charC
         mergeInto(counter, getNewStr2(charA, charB, depth+1));
         mergeInto(counter, getNewStr2(charB, charC, depth+1));
-        //return outcome1 + charB + outcome2;
     }
     cache[`${charA}-${charC}-${depth}`] = counter;
     return counter;
@@ -74,7 +73,5 @@ const main = async () => {
         }
     }    
     console.log(mostCommon - leastCommon);
-    //console.log(counters);
-
 }
 main();
